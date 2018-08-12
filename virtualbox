@@ -1,0 +1,22 @@
+1.
+cd /etc/yum.repos.d/
+wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+
+2.
+rpm -Uvh http://ftp.cuhk.edu.hk/pub/linux/fedora-epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+
+3.
+yum install gcc make patch  dkms qt libgomp
+yum install kernel-headers kernel-devel fontforge binutils glibc-headers glibc-devel
+
+4.
+/usr/src/kernels/
+3.10.0-862.9.1.el7.x86_64  3.10.0-862.9.1.el7.x86_64.debug
+
+export KERN_DIR=3.10.0-862.9.1.el7.x86_64
+
+5.
+yum install VirtualBox-5.1
+
+6.
+rcvboxdrv setup
