@@ -13,8 +13,11 @@ whoami
 group查看所有组
 groups consul查看组下的成员
 
+日志
+nohup command>>log 2>&1 &
+
 /etc/rsyslog.d/consul.conf
-local0.* /opt/consul/logs/consul.log
+local0.* /var/log/consul/consul.log
 
 # 重启rsyslog让配置生效。
 $ systemctl restart rsyslog
@@ -22,7 +25,7 @@ $ systemctl restart rsyslog
 https://linux.cn/article-4126-1.html
 # logrotate创建日志轮循规则
 /etc/logrotate.d/consul
-/opt/consul/logs/*log {
+/var/log/consul/*log {
 missingok
 compress
 notifempty
